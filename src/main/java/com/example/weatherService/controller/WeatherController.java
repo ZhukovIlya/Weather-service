@@ -23,7 +23,7 @@ public class WeatherController {
 
     @GetMapping("/weather")
     public String weather() {
-        return "Today: " + getWeather();
+        return getWeather();
     }
 
     public String getWeather() {
@@ -58,7 +58,7 @@ public class WeatherController {
             while ((inputLine = input.readLine()) != null) {
                 if (inputLine.contains(temp)) {
                     String result = inputLine.substring(inputLine.indexOf(temp) + 1);
-                    weatherYandex = result.substring(14, 18);
+                    weatherYandex = result.substring(14, 17);
                 }
             }
             input.close();
